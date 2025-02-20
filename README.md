@@ -1,1 +1,1 @@
-sine_test is the executable for an older version of the main function that just prints the value sof sine
+sine_test(<null, 1, 2, 3,...>) are the executables associated with an older version of the main function that just prints the values of sine. They are essentially test executables to ensure that data transfer works well between my function files and my main file
