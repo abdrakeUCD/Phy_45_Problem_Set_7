@@ -86,7 +86,7 @@ int distance_to_minmax(int n, int minmax)
 	return dist;
 }
 
-void terminal_prompts(int n)
+void terminal_prompts(int n, double *data)
 {
 	if is_bisectable(n)
 	{
@@ -123,18 +123,18 @@ void terminal_prompts(int n)
 			
 			if(response == 's')
 			{
-				// run change_datashape_min(n, distance_to_min)
+				// change_datashape_min(n, distance_to_min, &data);
 			}
 			if(response == 'l')
 			{
-				// run change_datashape_max(n, distance_to_max)
+				// change_datashape_max(n, distance_to_min, &data);
 			}
 		}
 
 	}
 }
 
-void change_datashape_min(int n, int distance_to_min) // change the data shape 
+void change_datashape_min(int n, int distance_to_min, double *data) // change the data shape 
 {
 	// terminal prompts to user
 	char response1;

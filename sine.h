@@ -3,8 +3,8 @@
 
 
 
-void printOutputVectorToFile(int n, double *a);
-void print_sine(void);
+void printOutputVectorToFile(int n, double *a, const char *filename);
+void print_sine(int maxdim, const char *filename);
 
 
 

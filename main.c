@@ -9,11 +9,29 @@
 
 int main()
 {
+	int maxdim = 256; // its just easier to do it this way such that ist accessible by the new main func
 	
-	print_sine(); // this is the old main function in sine.c
+	char sine_filename[] = "raw_sine_output_data_(test3).dat"; 
 	
-	// make new data file that arranges the outputs from print_sine into an 
+	// run sine generative data
+	print_sine(maxdim, sine_filename);
+	
+	// count the number of entries in y (defined in sine.c)
+	int n_y; 
 
+	// create pointer to data
+	double *data;
+	//data = malloc()
+
+	// make new data file that arranges the outputs from print_sine into an array
+	
+	
+	
+	// test functions (currently partially depriciated)
+	
+	
+	
+	// 
 
 
 
