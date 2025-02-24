@@ -1,33 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define PI 3.14159265
 
-void printOutputVectorToFile(int maxdim, double *a, const char *filename)  
-{
-	FILE *fp;
-	//char filestring[] = "raw_sine_output_data_(test2).dat";
-	fp=fopen(filename,"w");
-	for (int j=0; j<maxdim; j++)
-	{
-		fprintf(fp,"%lf  \n",*(a+j));
-		printf("%lf  \n",*(a+j));
-	}
-	fclose(fp);
-	printf("Data successfully written to %s\n", filename);
+#include "four1.h"
+
+#define PI 3.14159265
+#define MAXDIM 256
+
+void printOutputVectorToFile(int n, double *a);  
+
+
+int main()
+{int i; double *y, argument;
+    y=(double*)malloc(2*MAXDIM*sizeof(double));
+    printf("y= %p\n", y);
+for (i=0; i<MAXDIM; i++)
+{argument=i*2*PI/MAXDIM;
+    y[2*i]=((1*sin(argument)) + (0.4*sin(argument)));
+    y[2*i+1]=0.0;
+    printf("i= %d, y[i] = %lf ", i, y[i]);
+
+    four1(y, MAXDIM, 1);
+
+    
+
+}
+printOutputVectorToFile(MAXDIM,y);
+
+
 }
 
-void print_sine(int maxdim, const char *filename)
-{
-	int i; 
-	double *y, argument;
-	y=(double*)malloc(maxdim*sizeof(double)); // I use my cpp compiler so this definition is necessary
-	printf("y= %p\n", y);
-	for (i=0; i<maxdim; i++)
-	{
-		argument=i*2*PI/maxdim;
-		y[i]=sin(argument);
-		printf("i= %d, y[i] = %lf\n", i, y[i]);
-	}
-	printOutputVectorToFile(maxdim, y, filename);
+void printOutputVectorToFile(int n, double *a)   
+{FILE *fp;
+fp=fopen("MatrixOutputFile2","w");
+for (int j=0; j<n; j++)
+    {
+        {fprintf(fp,"%lf  \n",*(a+j));
+        printf("%lf  \n",*(a+j));
+        }
+    }
+fclose(fp);
+printf("Wrote MatrixOutputFile2\n");
 }
